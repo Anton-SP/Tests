@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.geekbrains.tests.R
 import com.geekbrains.tests.model.SearchResult
+import com.geekbrains.tests.presenter.details.PresenterDetailsContract
 import com.geekbrains.tests.presenter.search.PresenterSearchContract
 import com.geekbrains.tests.presenter.search.SearchPresenter
 import com.geekbrains.tests.repository.GitHubApi
@@ -20,13 +21,30 @@ import retrofit2.converter.gson.GsonConverterFactory
 class MainActivity : AppCompatActivity(), ViewSearchContract {
 
     private val adapter = SearchResultAdapter()
-    private val presenter: PresenterSearchContract = SearchPresenter(this, createRepository())
+    private val presenter: PresenterSearchContract = SearchPresenter(createRepository())
     private var totalCount: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        presenter.onAttach(this)
         setUI()
+    }
+
+    override fun onResume() {
+        presenter.onAttach(this)
+        super.onResume()
+
+    }
+
+    override fun onPause() {
+        presenter.onDetach()
+        super.onPause()
+    }
+
+    override fun onBackPressed() {
+        presenter.onDetach()
+        super.onBackPressed()
     }
 
     private fun setUI() {
@@ -95,6 +113,10 @@ class MainActivity : AppCompatActivity(), ViewSearchContract {
         } else {
             progressBar.visibility = View.GONE
         }
+    }
+
+    internal fun getPresenter(): PresenterSearchContract {
+        return this.presenter
     }
 
     companion object {
