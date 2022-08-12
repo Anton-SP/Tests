@@ -42,6 +42,11 @@ class MainActivity : AppCompatActivity(), ViewSearchContract {
         super.onPause()
     }
 
+    override fun onBackPressed() {
+        presenter.onDetach()
+        super.onBackPressed()
+    }
+
     private fun setUI() {
         toDetailsActivityButton.setOnClickListener {
             startActivity(DetailsActivity.getIntent(this, totalCount))

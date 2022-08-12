@@ -62,6 +62,16 @@ class SearchPresenterTest {
             }
     }
 
+    @Test
+    fun validateOnDetach() {
+        scenario.moveToState(Lifecycle.State.CREATED).moveToState(Lifecycle.State.RESUMED)
+            .onActivity {
+                val presenter = it.getPresenter()
+                it.onBackPressed()
+                assertNull(presenter.getview())
+            }
+    }
+
     @Test //Проверим вызов метода searchGitHub() у нашего Репозитория
     fun searchGitHub_Test() {
         val searchQuery = "some query"
