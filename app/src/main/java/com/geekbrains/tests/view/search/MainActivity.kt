@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.geekbrains.tests.R
 import com.geekbrains.tests.model.SearchResult
+import com.geekbrains.tests.presenter.details.PresenterDetailsContract
 import com.geekbrains.tests.presenter.search.PresenterSearchContract
 import com.geekbrains.tests.presenter.search.SearchPresenter
 import com.geekbrains.tests.repository.GitHubApi
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity(), ViewSearchContract {
     override fun onResume() {
         presenter.onAttach(this)
         super.onResume()
+
     }
 
     override fun onPause() {
@@ -106,6 +108,10 @@ class MainActivity : AppCompatActivity(), ViewSearchContract {
         } else {
             progressBar.visibility = View.GONE
         }
+    }
+
+    internal fun getPresenter(): PresenterSearchContract {
+        return this.presenter
     }
 
     companion object {

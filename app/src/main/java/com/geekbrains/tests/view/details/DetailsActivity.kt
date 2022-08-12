@@ -29,6 +29,23 @@ class DetailsActivity : AppCompatActivity(), ViewDetailsContract {
     override fun onPause() {
         presenter.onDetach()
         super.onPause()
+
+    }
+
+    override fun onDestroy() {
+        presenter.onDetach()
+        super.onDestroy()
+
+    }
+
+    override fun onBackPressed() {
+        presenter.onDetach()
+        super.onBackPressed()
+
+    }
+
+    internal fun getPresenter():PresenterDetailsContract{
+        return this.presenter
     }
 
     private fun setUI() {

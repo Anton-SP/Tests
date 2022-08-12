@@ -4,7 +4,7 @@ import com.geekbrains.tests.view.ViewContract
 import com.geekbrains.tests.view.details.ViewDetailsContract
 import com.geekbrains.tests.view.search.ViewSearchContract
 
-internal class DetailsPresenter internal constructor(
+class DetailsPresenter internal constructor(
      var count: Int = 0
 ) : PresenterDetailsContract {
 
@@ -24,6 +24,10 @@ internal class DetailsPresenter internal constructor(
         viewContract?.setCount(count)
     }
 
+    override fun getview(): ViewDetailsContract? {
+        return this.viewContract
+    }
+
     override fun onAttach(view: ViewContract) {
         this.viewContract = view as ViewDetailsContract
 
@@ -32,4 +36,8 @@ internal class DetailsPresenter internal constructor(
     override fun onDetach() {
         this.viewContract = null
     }
+
+
+
+
 }
