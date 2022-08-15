@@ -31,6 +31,7 @@ class DetailsActivityTest {
         context = ApplicationProvider.getApplicationContext()
     }
 
+
     @Test
     fun activity_AssertNotNull() {
         scenario.onActivity {
