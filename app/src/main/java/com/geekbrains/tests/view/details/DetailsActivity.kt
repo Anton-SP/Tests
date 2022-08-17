@@ -61,7 +61,7 @@ class DetailsActivity : AppCompatActivity(), ViewDetailsContract {
     }
 
     private fun setCountText(count: Int) {
-        totalCountTextView.text =
+        totalCountTextViewDetail.text =
             String.format(Locale.getDefault(), getString(R.string.results_count), count)
     }
 
