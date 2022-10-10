@@ -2,10 +2,9 @@ package com.geekbrains.tests.presenter.details
 
 import com.geekbrains.tests.view.ViewContract
 import com.geekbrains.tests.view.details.ViewDetailsContract
-import com.geekbrains.tests.view.search.ViewSearchContract
 
 class DetailsPresenter internal constructor(
-     var count: Int = 0
+    var count: Int = 0
 ) : PresenterDetailsContract {
 
     private var viewContract: ViewDetailsContract? = null

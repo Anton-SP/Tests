@@ -5,12 +5,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.geekbrains.tests"
         minSdkVersion 23
-        targetSdkVersion 32
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 
@@ -63,14 +63,15 @@ android {
             versionNameSuffix '.real'
         }
     }
+    namespace 'com.geekbrains.tests'
 }
 
 dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.7.10"
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
@@ -95,4 +96,10 @@ dependencies {
     testImplementation 'androidx.test.espresso:espresso-intents:3.4.0'
 
     androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
+
+    //Fragment
+    debugImplementation 'androidx.fragment:fragment-testing:1.5.3'
+
+    //RecyclerView
+    debugImplementation 'androidx.test.espresso:espresso-contrib:3.4.0'
 }
