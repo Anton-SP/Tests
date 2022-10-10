@@ -23,7 +23,7 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class DetailsActivityRecordIncrementDecrementTest {
 
-    @Rule
+  /*  @Rule
     @JvmField
     var mActivityScenarioRule = ActivityScenarioRule(MainActivity::class.java)
 
@@ -103,5 +103,5 @@ class DetailsActivityRecordIncrementDecrementTest {
                         && view == parent.getChildAt(position)
             }
         }
-    }
+    }*/
 }

@@ -18,7 +18,7 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class DetailsActivityEspressoTest {
 
-    private lateinit var scenario: ActivityScenario<DetailsActivity>
+    /*private lateinit var scenario: ActivityScenario<DetailsActivity>
 
     @Before
     fun setup() {
@@ -82,5 +82,5 @@ class DetailsActivityEspressoTest {
     @After
     fun close() {
         scenario.close()
-    }
+    }*/
 }

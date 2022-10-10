@@ -1,7 +1,6 @@
 package com.geekbrains.tests
 
 import android.os.Build
-import android.widget.Button
 import android.widget.TextView
 import androidx.lifecycle.Lifecycle
 import androidx.test.core.app.ActivityScenario
