@@ -56,7 +56,7 @@ class SearchPresenterTest {
     fun validateOnAttach() {
         scenario.moveToState(Lifecycle.State.CREATED).moveToState(Lifecycle.State.RESUMED)
             .onActivity {
-                val presenter = it.getPresenter()
+            //    val presenter = it.getPresenter()
                 assertEquals(it, presenter.getview())
             }
     }
@@ -65,7 +65,7 @@ class SearchPresenterTest {
     fun validateOnDetach() {
         scenario.moveToState(Lifecycle.State.CREATED).moveToState(Lifecycle.State.RESUMED)
             .onActivity {
-                val presenter = it.getPresenter()
+              //  val presenter = it.getPresenter()
                 it.onBackPressed()
                 assertNull(presenter.getview())
             }
