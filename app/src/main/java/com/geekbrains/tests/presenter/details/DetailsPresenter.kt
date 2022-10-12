@@ -37,6 +37,4 @@ class DetailsPresenter internal constructor(
     }
 
 
-
-
 }

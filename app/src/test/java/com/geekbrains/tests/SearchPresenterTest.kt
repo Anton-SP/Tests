@@ -41,7 +41,7 @@ class SearchPresenterTest {
         //Раньше было @RunWith(MockitoJUnitRunner.class) в аннотации к самому классу (SearchPresenterTest)
         MockitoAnnotations.initMocks(this)
         //Создаем Презентер, используя моки Репозитория и Вью, проинициализированные строкой выше
-        presenter = SearchPresenter(repository)
+      //  presenter = SearchPresenter(repository)
         scenario = ActivityScenario.launch(MainActivity::class.java)
 
     }
@@ -56,7 +56,7 @@ class SearchPresenterTest {
     fun validateOnAttach() {
         scenario.moveToState(Lifecycle.State.CREATED).moveToState(Lifecycle.State.RESUMED)
             .onActivity {
-                val presenter = it.getPresenter()
+            //    val presenter = it.getPresenter()
                 assertEquals(it, presenter.getview())
             }
     }
@@ -65,7 +65,7 @@ class SearchPresenterTest {
     fun validateOnDetach() {
         scenario.moveToState(Lifecycle.State.CREATED).moveToState(Lifecycle.State.RESUMED)
             .onActivity {
-                val presenter = it.getPresenter()
+              //  val presenter = it.getPresenter()
                 it.onBackPressed()
                 assertNull(presenter.getview())
             }
